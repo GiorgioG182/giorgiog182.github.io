@@ -38,7 +38,7 @@ header .logo {
     
     margin: auto;
     
-    width: 10px;
+    width: 14px;
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
@@ -72,12 +72,45 @@ nav {
     align-items: center;
 }
 
-nav ul {
-    padding-left: 0;
+
+.open-menu {
+    position: absolute;
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-nav ul li {
+.open-menu ul {
+    padding-left: 0;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 6rem;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.open-menu ul li {
     list-style-type: none;
 }
+
+.open-menu ul li:first-child {
+    margin: -100px 0 70px 0;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 3remrem;
+    text-decoration: none;
+}
+
 
 
