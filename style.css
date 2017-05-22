@@ -29,10 +29,16 @@ header {
     background-color: #F4F4F4;
 }
 
-header a {
+header .logo {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    margin: auto;
+    
+    width: 10px;
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
@@ -47,13 +53,14 @@ header a:visited {
     color: #4A4A4A;
 }
 
-nav p {
+nav a {
     transform: rotateZ(90deg);
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
     font-size: 0.8rem;
+    text-decoration: none;
 }
 
 nav {
