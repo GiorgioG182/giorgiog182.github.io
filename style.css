@@ -4,4 +4,7 @@
 
 .scroll-line::after {
     content: "scroll down";
+    display: inline;
+    color: black;
+    
 }
