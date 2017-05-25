@@ -1,18 +1,40 @@
 * {
     box-sizing: border-box;
-}
-
-body {
     margin: 0;
 }
 
 
-.scroll-line::after {
+.scroll::after {
     content: "scroll down";
     display: inline;
-    color: black;
+    color: #737373;
     
 }
+
+.bg {
+    position: fixed;
+    
+    width: 88vw;
+    height: 100vh;
+    
+    z-index: -1;
+    
+    background-color: #F1F1F1;
+    
+    display: flex;
+    flex-grow: row nowrap;
+    
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
+
+.line {
+    width: 25%;
+    height: 100%;
+    
+    border-right: 1px solid #DBDBDB;
+}
+
 
 header {
     position: fixed;
@@ -27,18 +49,16 @@ header {
     border-right: 1px solid #DBDBDB;
     
     background-color: #F4F4F4;
+    
+    z-index: 1;
 }
 
 header .logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: fixed;
+    top: 1%;
+    text-align: center;
     
-    margin: auto;
-    
-    width: 14px;
+    width: 6vw;
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
@@ -53,14 +73,15 @@ header a:visited {
     color: #4A4A4A;
 }
 
-nav a {
-    transform: rotateZ(90deg);
+.menu-button {
+    transform: rotateZ(-90deg);
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     text-decoration: none;
+    letter-spacing: 0.1rem;
 }
 
 nav {
@@ -73,24 +94,35 @@ nav {
 }
 
 
-.open-menu {
-    position: absolute;
-    left: 0;
-    
-    width: 100vw;
-    height: 100vh;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 6vw;
+    background-color: rgb(255,255,255);
+    overflow-x: hidden;
+    transition: 0.8s ease-in-out;
 }
 
-.open-menu ul {
-    padding-left: 0;
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 94vw;
+    text-align: center;
+    margin-top: 30px;
     
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
+    transition: 0.5s ease-in-out 1s;
+}
+
+.overlay a {
+    padding-top: 0.5rem; 
+    text-decoration: none;
+    color: #969696;
+    display: block;
+    transition: 0.3s ease-in-out;
     
     font-family: 'Cormorant Garamond', serif;
     line-height: 6rem;
@@ -98,18 +130,188 @@ nav {
     font-size: 3.5rem;
 }
 
-.open-menu ul li {
-    list-style-type: none;
-}
-
-.open-menu ul li:first-child {
-    margin: -100px 0 70px 0;
+.overlay a:first-child {
+    padding-bottom: 3rem;
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    font-size: 3remrem;
+    font-size: 1.5rem;
     text-decoration: none;
+    
+    color: #969696;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #818181;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 1%;
+    
+    width: 100%;
+    display: block;
+    
+    text-align: center;
+    font-size: 4rem;
+    
+    color: #969696;
+}
+
+
+section {
+    width: 88vw;
+    height: 100vh;
+    
+    
+    margin-left: 6vw;
+}
+
+
+.section.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+      
+}
+
+.section.home h2 {
+    text-align: left;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    
+    margin-bottom: 5rem;
+    margin-top: -4rem;
+    padding-left: 25%;
+    
+    width: 100%;
+    
+    
+    
+}
+
+.section.home h1 {
+    text-align: center;
+    
+    
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 3rem;
+    
+    letter-spacing: 0.1rem;
+    
+    padding: 0 7rem;
+    
+}
+
+
+
+.scroll.line1 {
+    position: absolute;
+    bottom: 2%;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    
+    
+    width: 88vw;
+    height: 14vh;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scroll.line1 span {
+    display: block;
+    
+    height: 8vh;
+    border-right: 1px solid grey;
+    margin-bottom: 1rem;
+    margin-left: -1px;
+}
+
+
+.section-contact {
+    display: flex;
+    font-size-adjust: center;
+    align-items: center;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    text-decoration: none;
+    
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 32%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 32%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 32%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+
+}
+
+form  {
+    width: 70vw;
+    height: auto;
+    
+    margin: 0 auto;
+    
+    display: block;
+}
+
+.form {
+    width: 100%;
+    padding: 1.5rem 0;
+    display: table;
+}
+
+
+.form label {
+    display: inline-block;
+    width: 40%;
+    height: auto;
+}
+
+.form.email {
+    border-bottom: 1px solid #DBDBDB;
+    border-top: 1px solid #DBDBDB;
+}
+
+.form.message {
+    border-bottom: 1px solid #DBDBDB;
+    border-top: 1px solid #DBDBDB;
+    
+    padding-bottom: 10em;
+}
+
+
+.submit {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    
+    border: 0;
+    background-color: white;
+    
+    float: right;
+    
+    margin-top: 1rem;
+}
+
+.input-style {
+    border: none;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
 }
 
 

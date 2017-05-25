@@ -14,22 +14,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
     <body>
+       
+       <script>
+            function openNav() {
+                document.getElementById("myNav").style.width = "94vw";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
         
         <div class="wrap">
           
            <header>
                <a href="#" class="logo">G</a>
                 <nav class="menu">
-                    <a href="#">menu</a>
+                    <a  class="menu-button" style="cursor:pointer" onclick="openNav()">menu</a>
                     
                     
-                    <div class="open-menu">
-                        <ul>
-                            <li>G</li>
-                            <li>Contact</li>
-                            <li>About</li>
-                            <li>Works</li>
-                        </ul>
+                    <div id="myNav" class="overlay">
+                     
+                      
+                       <div class="overlay-content">
+                        <a href="#">G</a>
+                        <a href="#">About</a>
+                        <a href="#">Works</a>
+                        <a href="#">Contact</a>
+                      </div>
+                      
+                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                      
                     </div>
                     
                     
@@ -40,50 +55,67 @@
             
             <!-- Background color and lines -->
             <div class="bg">
-                <div class="line-left"></div>
-                <div class="line-middle"></div>
-                <div class="line-right"></div> 
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div> 
+                <div class="line"></div> 
             </div>
             
             
             <!-- homepage content -->
-            <div class="section-1">
-                <h2>- Hello</h2>
-                <h1>I’m <strong>Giorgio Giachetti</strong>,
-                    based in Milan, 
-                 focus on <strong>Interactive Solutions</strong>
-                &amp; <strong>User Experience</strong>.</h1>
-                <div class="scroll-line"></div>
+            <section class="section home">
+                <h2>- What's up?</h2>
+                <h1>Nice to meet you, i'm <strong>Giorgio Giachetti</strong>,<br>
+                    i'm into <strong>clean and functional interfaces</strong> with focus on <strong>usability</strong>. <br><strong>Currently looking for an internship</strong>.</h1>
+                <div class="scroll line1"><span></span></div>
                 
-            </div>
+            </section>
             
             <!-- slider -->
-            <div class="section-2">
+            <section class="section slider-1">
                 <img src="#" alt="Magazine Tuesdays">
                 <h3>Tuesdays</h3>
-                <div class="scroll-line"></div>
-            </div>
+                <div class="scroll line"></div>
+            </section>
             
-            <div class="section-3">
+            <section class="section slider-2">
                 <img src="#" alt="">
                 <h3>Tuesdays</h3>
-                <div class="scroll-line"></div>
-            </div>
+                <div class="scroll line"></div>
+            </section>
             
-            <div class="section-4">
+            <section class="section slider-3">
                 <img src="#" alt="">
                 <h3>Tuesdays</h3>
-                <div class="scroll-line"></div>
-            </div>
+                <div class="scroll line"></div>
+            </section>
             
-            <div class="section-contact">
+            <section class="section-contact">
+               
                 <form action="">
-                    <input type="text" name="Name Surname" placeholder="Who am i speaking to?">
-                    <input type="email" name="email" placeholder="Type your email">
-                    <input type="number" name="phone" placeholder="Your number">
-                    <input type="text" name="message" placeholder="Type your request">
+                    <div class="form">
+                        <label for="Name&Surname">Name &amp; Surname</label>
+                        <input class="input-style" type="text" name="Name Surname" placeholder="Who am i speaking to?">
+                    </div>
+                    
+                    <div class="form email">
+                    <label for="Email">Your Email</label>
+                    <input class="input-style" type="email" name="email" placeholder="Type your email">
+                    </div>
+                    
+                    <div class="form number">
+                    <label for="Number">Your Phone</label>
+                    <input class="input-style" type="number" name="phone" placeholder="Your number">
+                    </div>
+                    <div class="form message">
+                    <label for="Message">Your Message</label>
+                    <input class="input-style" type="text" name="message" placeholder="Type your request">
+                    </div>
+                    
+                    <input class="submit" type="submit" value="send">
                 </form>
-            </div>
+                
+            </section>
             
         </div>
 
