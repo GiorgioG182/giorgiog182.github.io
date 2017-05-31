@@ -48,17 +48,27 @@ body, .onepage-wrapper, html {
 
 .onepage-pagination {
   position: absolute;
-  right: 10px;
-  top: 50%;
-  z-index: 5;
+    right: 0;
+  top: calc(50% - 82px);
+  z-index: 2;
   list-style: none;
   margin: 0;
   padding: 0;
+    
+    width: 6vw;
+    height: 164px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .onepage-pagination li {
-  padding: 0;
-  text-align: center;
+    padding: 0.3vw 0.3em 0 0;
+    text-align: center;
+    
+    display: block;
 }
+
 .onepage-pagination li a{
   padding: 10px;
   width: 4px;
@@ -71,19 +81,19 @@ body, .onepage-wrapper, html {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(0,0,0,0.85);
+  background: #a5a5a5;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
 }
 
 .onepage-pagination li a.active:before{
-  width: 10px;
-  height: 10px;
-  background: none;
-  border: 1px solid black;
-  margin-top: -4px;
-  left: 6px;
+      width: 8px;
+      height: 8px;
+      background: none;
+      border: 1px solid grey;
+      margin-top: -4px;
+    left: calc(50% - 5px);
 }
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
@@ -112,6 +122,9 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
   position: inherit;
 }
 
+.noscroll {
+   position: fixed;
+}
 
 
 .scroll::after {
@@ -165,7 +178,7 @@ header {
 
 header .logo {
     position: fixed;
-    top: 1%;
+    top: 2vw;
     text-align: center;
     
     width: 6vw;
@@ -208,7 +221,7 @@ nav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     left: 6vw;
     background-color: rgb(255,255,255);
@@ -240,31 +253,30 @@ nav {
     font-size: 3.5rem;
 }
 
-.overlay a:first-child {
-    padding-bottom: 3rem;
+.overlay a:nth-child(2) {
+    padding-bottom: 1rem;
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     text-decoration: none;
     
-    color: #969696;
 }
 
 .overlay a:hover, .overlay a:focus {
     color: #818181;
 }
 
-.overlay .closebtn {
+.overlay-content .closebtn {
     position: absolute;
-    top: 1%;
+    top: -24%;
     
     width: 100%;
     display: block;
     
     text-align: center;
-    font-size: 4rem;
+    font-size: 5rem;
     
     color: #969696;
     
@@ -333,6 +345,8 @@ section {
     position: absolute;
     bottom: 2%;
     
+    margin: 0 auto;
+    
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     
@@ -353,12 +367,12 @@ section {
     height: 8vh;
     border-right: 1px solid grey;
     margin-bottom: 1rem;
-    margin-left: -1px;
 }
 
 
-.section-contact.page3 {
+.section-contact.page6 {
     padding-top: 15vh;
+    border-right: 1px solid #DBDBDB;
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
@@ -441,6 +455,7 @@ textarea {
     float: right;
     
     width: 60%;
+    max-width: 60%;
     
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;

@@ -20,11 +20,28 @@
    
    <script>
 	  $(document).ready(function(){
-      $(".main").onepage_scroll({
+         
+              $(".main").onepage_scroll({
         sectionContainer: "section",
         responsiveFallback: 600,
         loop: true
-      });
+      }); 
+         
+          $(".menu-button").on("click", function(){
+              $(".main").onepage_scroll({
+        sectionContainer: "",
+        responsiveFallback: 600,
+        loop: false
+      }); 
+          });
+          
+         $(".closebtn").on("click", function(){
+              $(".main").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: 600,
+        loop: true
+      }); 
+          });
 		});
 		
 	</script>
@@ -52,13 +69,14 @@
                      
                       
                        <div class="overlay-content">
+                       
+                       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                       
                         <a href="#">G</a>
                         <a href="#">About</a>
                         <a href="#">Works</a>
                         <a href="#">Contact</a>
                       </div>
-                      
-                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                       
                     </div>
                     
@@ -91,7 +109,7 @@
             </section>
             
             
-            <!-- slider -->
+            <!-- works -->
             <section class="page2">
             <div class="page_container">
                
@@ -104,8 +122,41 @@
                 </div>
             
             </section>
+            <section class="page3">
+            <div class="page_container">
+               
+                <div class="section slider-1">
+                <img src="Images/tuesday.jpg" alt="Magazine Tuesdays">
+                <h3>Tuesdays</h3>
+                <div class="scroll line"></div>
+                </div>
             
-            <section class="section-contact page3">
+                </div>
+            
+            </section>
+            <section class="page4">
+            <div class="page_container">
+               
+                <div class="section slider-1">
+                <img src="Images/tuesday.jpg" alt="Magazine Tuesdays">
+                <h3>Tuesdays</h3>
+                <div class="scroll line"></div>
+                </div>
+            
+                </div>
+            
+            </section>
+            
+            <section class="page5">
+            <div class="page_container">
+               
+                
+            
+                </div>
+            
+            </section>
+            
+            <section class="section-contact page6">
                <div class="page_container">
                 <form action="">
                     <div class="form">
