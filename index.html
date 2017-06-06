@@ -17,18 +17,37 @@
    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat" rel="stylesheet">
    
    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
-   
+   <!-- Scroll -->
    <script>
+       
+       
 	  $(document).ready(function(){
-      $(".main").onepage_scroll({
+         
+              $(".main").onepage_scroll({
         sectionContainer: "section",
         responsiveFallback: 600,
         loop: true
-      });
+      }); 
+         
+          $(".menu-button").on("click", function(){
+              $(".main").onepage_scroll({
+        sectionContainer: "",
+        responsiveFallback: 600,
+        loop: false
+      }); 
+          });
+          
+         $(".closebtn").on("click", function(){
+              $(".main").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: 600,
+        loop: true
+      }); 
+          });
 		});
 		
 	</script>
-
+    <!-- Menu -->
     <script>
             function openNav() {
                 document.getElementById("myNav").style.width = "94vw";
@@ -38,6 +57,8 @@
                 document.getElementById("myNav").style.width = "0%";
             }
         </script>
+        
+        
     
 </head>
     <body>
@@ -52,13 +73,14 @@
                      
                       
                        <div class="overlay-content">
+                       
+                       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                       
                         <a href="#">G</a>
-                        <a href="#">About</a>
+                        <a href="#about">About</a>
                         <a href="#">Works</a>
                         <a href="#">Contact</a>
                       </div>
-                      
-                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                       
                     </div>
                     
@@ -86,26 +108,71 @@
                 <h2>- What's up?</h2>
                 <h1>Nice to meet you, i'm <strong>Giorgio Giachetti</strong>,<br>
                     i'm into <strong>clean and functional interfaces</strong> with focus on <strong>usability</strong>. <br><strong>Currently looking for an internship</strong>.</h1>
-                <div class="scroll line1"><span></span></div>
+                <div class="scroll"><span></span></div>
                 </div>
             </section>
             
             
-            <!-- slider -->
+            <!-- works -->
             <section class="page2">
             <div class="page_container">
                
-                <div class="section slider-1">
+                <div class="section_project slider-1">
+                <img src="Images/atm.jpg" alt="atm app design">
+                <h3>Atm design</h3>
+                <h2>UX-UI design</h2>
+                <h2>_</h2>
+                <a href="#"><div class="view_more p1"></div></a>
+                </div>
+            
+                </div>
+            
+            </section>
+            <section class="page3">
+            <div class="page_container">
+               
+                <div class="section_project slider-2 ">
+                <img src="Images/dolce.jpg" alt="Dolce&Gabbana in-store app">
+                <h3>Dolce&amp;Gabbana</h3>
+                <h2>UX design - Strategy</h2>
+                <h2>_</h2>
+                <a href="#"><div class="view_more p2"></div></a>
+                </div>
+            
+                </div>
+            
+            </section>
+            <section class="page4">
+            <div class="page_container">
+               
+                <div class="section_project slider-3">
                 <img src="Images/tuesday.jpg" alt="Magazine Tuesdays">
                 <h3>Tuesdays</h3>
-                <div class="scroll line"></div>
+                <h2>Visual design</h2>
+                <h2>_</h2>
+                <a href="#"><div class="view_more p3">
+                </div></a>
                 </div>
             
                 </div>
             
             </section>
             
-            <section class="section-contact page3">
+            <section id="about" class="page5">
+            <div class="page_container">
+              <div class="about">
+               <h1>I’m an <strong>Italian designer</strong> currently based in <strong>Milan</strong>. I graduated in <strong>Industrial design</strong> at I.U.A.V. university in Venice and now i’m attending a master in <strong>Web and Digital design</strong> at SPD. 
+</h1>
+<h1>
+Always <strong>combining form with function</strong>, my practice finds its ground in <strong>simplicity</strong>.
+I firmly believe <strong>user experience</strong> is unseparable from the visual aspect of a digital product, <strong>every small detail can’t be obmitted</strong>. I have a strong interest in <strong>Front-end coding</strong> with focus on writing clean and efficient code.</h1>
+                </div>
+            
+                </div>
+            
+            </section>
+            
+            <section class="section-contact page6">
                <div class="page_container">
                 <form action="">
                     <div class="form">
