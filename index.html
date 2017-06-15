@@ -1,218 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script type="text/javascript" src="jquery.onepage-scroll.js"></script>
-   
+    <script type="text/javascript" src="jquery.onepage-scroll.js"></script>
+
     <title>Giorgio Giachetti</title>
     <link rel="shortcut icon" href="favicon-96x96.png">
-    
+
     <meta name="description" content="">
     <meta name="keywords" content="">
-  
-   <link rel="stylesheet" href="style.css">
-   
-   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat" rel="stylesheet">
-   
-   <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
-   
-   <!-- SlidesJS Required: Link to jquery.slides.js -->
-  <script src="jquery.slides.js"></script>
-  <!-- End SlidesJS Required -->
 
-  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
-  <script>
-    $(function() {
-      $('#slides').slidesjs({
-        width: 940,
-        height: 528,
-        navigation: {
-          effect: "fade"
-        },
-        pagination: {
-          effect: "fade"
-        },
-        effect: {
-          fade: {
-            speed: 400
-          }
-        }
-      });
-    });
-  </script>
-  
-   <!-- Scroll -->
-   <script>
-       
-       
-	  $(document).ready(function(){
-         
-              $(".main").onepage_scroll({
-        sectionContainer: "section",
-        responsiveFallback: 600,
-        loop: true
-      }); 
-         
-          $(".menu-button").on("click", function(){
-              $(".main").onepage_scroll({
-        sectionContainer: "",
-        responsiveFallback: 600,
-        loop: false
-      }); 
-          });
-          
-         $(".closebtn").on("click", function(){
-              $(".main").onepage_scroll({
-        sectionContainer: "section",
-        responsiveFallback: 600,
-        loop: true
-      }); 
-          });
-		});
-		
-	</script>
-        
-        
-    
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat" rel="stylesheet">
+
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- SlidesJS Required: Link to jquery.slides.js -->
+    <script src="jquery.slides.js"></script>
+    <!-- End SlidesJS Required -->
+
+    <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+    <script>
+        $(function() {
+            $('#slides').slidesjs({
+                width: 940,
+                height: 528,
+                navigation: {
+                    effect: "fade"
+                },
+                pagination: {
+                    effect: "fade"
+                },
+                effect: {
+                    fade: {
+                        speed: 400
+                    }
+                }
+            });
+        });
+
+    </script>
+
+    <!-- Scroll -->
+    <script>
+        $(document).ready(function() {
+
+            $(".main").onepage_scroll({
+                sectionContainer: "section",
+                responsiveFallback: 600,
+                loop: true
+            });
+
+            $(".menu-button").on("click", function() {
+                $(".main").onepage_scroll({
+                    sectionContainer: "",
+                    responsiveFallback: 600,
+                    loop: false
+                });
+            });
+
+            $(".closebtn").on("click", function() {
+                $(".main").onepage_scroll({
+                    sectionContainer: "section",
+                    responsiveFallback: 600,
+                    loop: true
+                });
+            });
+        });
+
+    </script>
+
+
+
 </head>
-    <body>
-       
-       <header>
-               <a href="#" class="logo">G</a>
-            
-            
-            </header>
-            
-            <!-- Background color and lines -->
-            <div class="bg">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div> 
-                <div class="line"></div> 
-            </div>
-        
-        <div class="wrapper">
-          <div class="main">
-            
-            
+
+<body>
+
+    <header>
+        <a href="#" class="logo">G</a>
+
+
+    </header>
+
+    <!-- Background color and lines -->
+    <div class="bg">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="main">
+
+
             <!-- homepage content -->
             <section class="section page1">
-               <div class="page_container">
-                <h2>- What's up?</h2>
-                   <h1>Nice to meet you,<span class="mobile"><br/></span> i'm <strong>Giorgio Giachetti</strong>,<br>
-                    i'm into <strong>clean and functional interfaces</strong> with focus on <strong>usability</strong>. <br><strong>Currently looking for an internship</strong>.</h1>
-                <div class="scroll"><span></span></div>
+                <div class="page_container">
+                    <h2>- What's up?</h2>
+                    <h1>Nice to meet you,<span class="mobile"><br/></span> i'm <strong>Giorgio Giachetti</strong>,<br> i'm into <strong>clean and functional interfaces</strong> with focus on <strong>usability</strong>. <br><strong>Currently looking for an internship</strong>.</h1>
+                    <div class="scroll"><span></span></div>
                 </div>
             </section>
-            
-            
+
+
             <!-- works -->
             <section class="page2">
-            <div class="page_container" >
-            <div class="about">
-              
-               <h1>I’m an <strong>Italian designer</strong> currently based in <strong>Milan</strong>. I graduated in <strong>Industrial design</strong> at I.U.A.V. university in Venice, intern at <strong><a href="#">Night Owls Interactive</a></strong> in New York and now i’m attending a master in <strong>Web and Digital design</strong> at SPD. 
-</h1>
-<h1>
-Always <strong>combining form with function</strong>, my practice finds its ground in <strong>simplicity</strong>.
-I firmly believe <strong>user experience</strong> is unseparable from the visual aspect of a digital product, <strong>every small detail can’t be obmitted</strong>. I have a strong interest in <strong>Front-end coding</strong> with focus on writing clean and efficient code.</h1>
+                <div class="page_container">
+                    <div class="about">
+
+                        <h1>I’m an <strong>Italian designer</strong> currently based in <strong>Milan</strong>. I graduated in <strong>Industrial design</strong> at I.U.A.V. university in Venice, intern at <strong><a href="#">Night Owls Interactive</a></strong> in New York and now i’m attending a master in <strong>Web and Digital design</strong> at SPD.
+                        </h1>
+                        <h1>
+                            Always <strong>combining form with function</strong>, my practice finds its ground in <strong>simplicity</strong>. I firmly believe <strong>user experience</strong> is unseparable from the visual aspect of a digital product, <strong>every small detail can’t be obmitted</strong>. I have a strong interest in <strong>Front-end coding</strong> with focus on writing clean and efficient code.</h1>
+                    </div>
                 </div>
-                </div>
-            
+
             </section>
             <section class="page3">
-            <div class="page_container">
-               
-                <div class="section_project slider-1">
-                <img src="atm.jpg" alt="atm app design">
-                <a href="https://invis.io/QFC2HHNCA" style="text-decoration: none"><div class="view_more p1"></div></a>
-                <h3>Atm design</h3>
-                <div class="description_project1">
-                <h2>UX-UI design</h2>
-                <h2>_</h2>
-                <p>Review and re-design the ATM App user interface in order to make it more usable focusing on errors
-generated, efficiency and learnability.</p>
-               </div>
+                <div class="page_container">
+
+                    <div class="section_project slider-1">
+                        <img src="atm.jpg" alt="atm app design">
+                        <a href="https://invis.io/QFC2HHNCA" style="text-decoration: none">
+                            <div class="view_more p1"></div>
+                        </a>
+                        <h3>Atm design</h3>
+                        <div class="description_project1">
+                            <h2>UX-UI design</h2>
+                            <h2>_</h2>
+                            <p>Review and re-design the ATM App user interface in order to make it more usable focusing on errors generated, efficiency and learnability.</p>
+                        </div>
+                    </div>
+
                 </div>
-            
-                </div>
-            
+
             </section>
             <section class="page4">
-            <div class="page_container">
-               <div class="section_project slider-2 ">
-                <h3>Dolce&amp;Gabbana</h3>
-                <img src="dolce.jpg" alt="Dolce&Gabbana in-store app">
-                <a href="https://invis.io/BQC2HZJC5"><div class="view_more p2"></div></a>
-                <div class="description_project2">
-                <h2>UX design - Strategy</h2>
-                <h2>_</h2>
-                <p>App design for sales assistans focusing on collecting data from clients in a efficient and non-invasive way. </p>
-                   </div>
-                </div>
-                
-            
-                </div>
-            
-            </section>
-            
-            <section class="page5">
-            <div class="page_container">
-                <div class="section_project slider-3">
-                           <div class="container">
-                        <div id="slides">
-                          <img src="tuesday.jpg" alt="Magazine Tuesdays">
-                          <img src="tuesday1.jpg" alt="Magazine Tuesdays">
-                          <img src="tuesday2.jpg" alt="Magazine Tuesdays">
-                          <img src="tuesday3.jpg" alt="Magazine Tuesdays">
+                <div class="page_container">
+                    <div class="section_project slider-2 ">
+                        <h3>Dolce&amp;Gabbana</h3>
+                        <img src="dolce.jpg" alt="Dolce&Gabbana in-store app">
+                        <a href="https://invis.io/BQC2HZJC5">
+                            <div class="view_more p2"></div>
+                        </a>
+                        <div class="description_project2">
+                            <h2>UX design - Strategy</h2>
+                            <h2>_</h2>
+                            <p>App design for sales assistans focusing on collecting data from clients in a efficient and non-invasive way. </p>
                         </div>
-                      </div>
-                   <span class="slide_mobile">Slide to see more</span>
-                <h3>Tuesdays</h3>
-                <div class="description_project3">
-                <h2>Visual design</h2>
-                <h2>_</h2>
-                <p>Design of a fashion digital magazine for Ipad
-                    with a strong focus
-                    on typography. 
-               </p>
                     </div>
-                
-                </div>
-                </div>
-            
-            </section>
-            
-            <section class="section-contact page6">
-               <div class="page_container" id="contact">
-                <form name="contactform" method="post" action="send_mail.php">
-                    <div class="form" >
-                        <label for="Name">Name &amp; Surname</label>
-                        <input class="input-style" type="text" name="name" placeholder="Who am i speaking to?" required>
-                    </div>
-                    
-                    <div class="form email">
-                    <label for="Email">Your Email</label>
-                    <input class="input-style" type="email" name="email" placeholder="Type your email" required>
-                    </div>
-                    
-                    <div class="form number">
-                    <label for="phone">Your Phone</label>
-                    <input class="input-style" type="number" name="phone" placeholder="Your number" required>
-                    </div>
-                    <div class="form message">
-                    <label for="Message">Your Message</label>
-                    <textarea onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" name="message" id="" cols="30" rows="10" required>Type your request</textarea>
-                    </div>
-                    
-                    <input class="submit" type="submit" value="submit">
-                </form>
-                </div>
-            </section>
-            </div>
-        </div>
 
-    </body>
+
+                </div>
+
+            </section>
+
+            <section class="page5">
+                <div class="page_container">
+                    <div class="section_project slider-3">
+                        <div class="container">
+                            <div id="slides">
+                                <img src="tuesday.jpg" alt="Magazine Tuesdays">
+                                <img src="tuesday1.jpg" alt="Magazine Tuesdays">
+                                <img src="tuesday2.jpg" alt="Magazine Tuesdays">
+                                <img src="tuesday3.jpg" alt="Magazine Tuesdays">
+                            </div>
+                        </div>
+                        <span class="slide_mobile">Slide to see more</span>
+                        <h3>Tuesdays</h3>
+                        <div class="description_project3">
+                            <h2>Visual design</h2>
+                            <h2>_</h2>
+                            <p>Design of a fashion digital magazine for Ipad with a strong focus on typography.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="section-contact page6">
+                <div class="page_container" id="contact">
+                    <form name="contactform" method="post" action="send_mail.php">
+                        <div class="form">
+                            <label for="Name">Name &amp; Surname</label>
+                            <input class="input-style" type="text" name="name" placeholder="Who am i speaking to?" required>
+                        </div>
+
+                        <div class="form email">
+                            <label for="Email">Your Email</label>
+                            <input class="input-style" type="email" name="email" placeholder="Type your email" required>
+                        </div>
+
+                        <div class="form number">
+                            <label for="phone">Your Phone</label>
+                            <input class="input-style" type="number" name="phone" placeholder="Your number" required>
+                        </div>
+                        <div class="form message">
+                            <label for="Message">Your Message</label>
+                            <textarea onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" name="message" id="" cols="30" rows="10" required>Type your request</textarea>
+                        </div>
+
+                        <input class="submit" type="submit" value="submit">
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+
 </html>
