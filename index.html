@@ -11,6 +11,43 @@
 
     <meta name="description" content="">
     <meta name="keywords" content="">
+<<<<<<< HEAD
+=======
+  
+   <link rel="stylesheet" href="style.css">
+   
+   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat" rel="stylesheet">
+   
+   <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+   
+   <script>
+	  $(document).ready(function(){
+         
+              $(".main").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: 600,
+        loop: true
+      }); 
+         
+          $(".menu-button").on("click", function(){
+              $(".main").onepage_scroll({
+        sectionContainer: "",
+        responsiveFallback: 600,
+        loop: false
+      }); 
+          });
+          
+         $(".closebtn").on("click", function(){
+              $(".main").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: 600,
+        loop: true
+      }); 
+          });
+		});
+		
+	</script>
+>>>>>>> origin/master
 
     <link rel="stylesheet" href="CSS/style.css">
 
@@ -87,6 +124,7 @@
 
 
 </head>
+<<<<<<< HEAD
 
 <body>
 
@@ -112,6 +150,49 @@
         <div class="main">
 
 
+=======
+    <body>
+       
+       <header>
+               <a href="#" class="logo">G</a>
+                <nav class="menu">
+                    <a  class="menu-button" style="cursor:pointer" onclick="openNav() ">menu</a>
+                    
+                    
+                    <div id="myNav" class="overlay">
+                     
+                      
+                       <div class="overlay-content">
+                       
+                       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                       
+                        <a href="#">G</a>
+                        <a href="#">About</a>
+                        <a href="#">Works</a>
+                        <a href="#">Contact</a>
+                      </div>
+                      
+                    </div>
+                    
+                    
+                    
+                </nav>
+            
+            </header>
+            
+            <!-- Background color and lines -->
+            <div class="bg">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div> 
+                <div class="line"></div> 
+            </div>
+        
+        <div class="wrapper">
+          <div class="main">
+            
+            
+>>>>>>> origin/master
             <!-- homepage content -->
             <section class="section page1">
                 <div class="page_container">
@@ -120,8 +201,13 @@
                     <div class="scroll"><span></span></div>
                 </div>
             </section>
+<<<<<<< HEAD
 
 
+=======
+            
+            
+>>>>>>> origin/master
             <!-- works -->
             <section class="page2">
                 <div class="page_container">
@@ -136,6 +222,7 @@
 
             </section>
             <section class="page3">
+<<<<<<< HEAD
                 <div class="page_container">
 
                     <div class="section_project slider-1">
@@ -151,6 +238,47 @@
                             <h2>_</h2>
                             <p>Review and re-design the ATM App user interface in order to make it more usable focusing on errors generated, efficiency and learnability.</p>
                         </div>
+=======
+            <div class="page_container">
+               
+                <div class="section slider-1">
+                <img src="Images/tuesday.jpg" alt="Magazine Tuesdays">
+                <h3>Tuesdays</h3>
+                <div class="scroll line"></div>
+                </div>
+            
+                </div>
+            
+            </section>
+            <section class="page4">
+            <div class="page_container">
+               
+                <div class="section slider-1">
+                <img src="Images/tuesday.jpg" alt="Magazine Tuesdays">
+                <h3>Tuesdays</h3>
+                <div class="scroll line"></div>
+                </div>
+            
+                </div>
+            
+            </section>
+            
+            <section class="page5">
+            <div class="page_container">
+               
+                
+            
+                </div>
+            
+            </section>
+            
+            <section class="section-contact page6">
+               <div class="page_container">
+                <form action="">
+                    <div class="form">
+                        <label for="Name&Surname">Name &amp; Surname</label>
+                        <input class="input-style" type="text" name="Name Surname" placeholder="Who am i speaking to?">
+>>>>>>> origin/master
                     </div>
 
                 </div>
