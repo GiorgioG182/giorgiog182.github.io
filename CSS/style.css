@@ -1,0 +1,1392 @@
+                    * {
+                        box-sizing: border-box;
+                        margin: 0;
+                        -webkit-overflow-scrolling: touch;
+                        -webkit-box-sizing: border-box;
+                        /* Safari/Chrome, other WebKit */
+                        -moz-box-sizing: border-box;
+                        /* Firefox, other Gecko */
+                        box-sizing: border-box;
+                    }
+                    
+                    html {
+                        height: 100%;
+                        -webkit-font-smoothing: antialiased;
+                    }
+                    
+                    .wrapper {
+                        height: 100% !important;
+                        height: 100%;
+                        margin: 0 auto;
+                        overflow: hidden;
+                    }
+                    
+                    body,
+                    html {
+                        margin: 0;
+                        overflow: hidden;
+                        -webkit-transition: opacity 400ms;
+                        -moz-transition: opacity 400ms;
+                        transition: opacity 400ms;
+                    }
+                    
+                    body,
+                    .onepage-wrapper,
+                    html {
+                        display: block;
+                        position: static;
+                        padding: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    
+                    .onepage-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        position: relative;
+                        padding: 0;
+                        -webkit-transform-style: preserve-3d;
+                    }
+                    
+                    .onepage-wrapper .section {
+                        width: 88vw;
+                        height: 100%;
+                    }
+                    
+                    .onepage-pagination {
+                        position: absolute;
+                        right: 0;
+                        top: calc(50% - 82px);
+                        z-index: 2;
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        width: 6vw;
+                        height: 164px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    
+                    .onepage-pagination li {
+                        padding: 0.3vw 0.3em 0 0;
+                        text-align: center;
+                        display: block;
+                    }
+                    
+                    .onepage-pagination li a {
+                        padding: 10px;
+                        width: 4px;
+                        height: 4px;
+                        display: block;
+                    }
+                    
+                    .onepage-pagination li a:before {
+                        content: '';
+                        position: absolute;
+                        width: 4px;
+                        height: 4px;
+                        background: #a5a5a5;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                    }
+                    
+                    .onepage-pagination li a.active:before {
+                        width: 8px;
+                        height: 8px;
+                        background: none;
+                        border: 1px solid grey;
+                        margin-top: -4px;
+                        left: calc(50% - 5px);
+                    }
+                    
+                    .disabled-onepage-scroll,
+                    .disabled-onepage-scroll .wrapper {
+                        overflow: auto;
+                    }
+                    
+                    .disabled-onepage-scroll .onepage-wrapper .section {
+                        position: relative !important;
+                        top: auto !important;
+                        left: auto !important;
+                    }
+                    
+                    .disabled-onepage-scroll .onepage-wrapper {
+                        -webkit-transform: none !important;
+                        -moz-transform: none !important;
+                        transform: none !important;
+                        -ms-transform: none !important;
+                        min-height: 100%;
+                    }
+                    
+                    .disabled-onepage-scroll .onepage-pagination {
+                        display: none;
+                    }
+                    
+                    body.disabled-onepage-scroll,
+                    .disabled-onepage-scroll .onepage-wrapper,
+                    html {
+                        position: inherit;
+                    }
+                    
+                    .noscroll {
+                        position: fixed;
+                    }
+                    
+                    .scroll::after {
+                        content: "scroll down";
+                        display: inline;
+                        color: #737373;
+                    }
+                    
+                    .view_more {
+                        display: inline;
+                        color: #737373;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        font-size: 1rem;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                    
+                    .bg {
+                        position: absolute;
+                        width: 88vw;
+                        height: 100%;
+                        z-index: -1;
+                        background-color: #F1F1F1;
+                        display: flex;
+                        flex-grow: row nowrap;
+                        margin-left: 6vw;
+                        margin-right: 6vw;
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .bg {
+                            position: absolute;
+                            width: 100vw;
+                            height: 100%;
+                            z-index: -1;
+                            background-color: #F1F1F1;
+                            display: flex;
+                            flex-grow: row nowrap;
+                            margin-left: 0vw;
+                            margin-right: 0vw;
+                        }
+                    }
+                    
+                    .line {
+                        width: 25%;
+                        height: 100%;
+                        border-right: 1px solid #DBDBDB;
+                    }
+                    
+                    header {
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        width: 6vw;
+                        height: 100vh;
+                        margin: 0;
+                        border-right: 1px solid #DBDBDB;
+                        background-color: #F4F4F4;
+                        z-index: -1;
+                        text-align: center;
+                    }
+                    
+                    header .logo {
+                        position: fixed;
+                        top: 2vw;
+                        
+                        width: 6vw;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        font-size: 1.2rem;
+                        text-decoration: none;
+                        color: #4A4A4A;
+                        z-index: 1;
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        header {
+                            position: fixed;
+                            left: 0;
+                            top: 0;
+                            width: 100vw;
+                            height: 8vh;
+                            margin: 0;
+                            border-bottom: 1px solid #DBDBDB;
+                            background-color: #F4F4F4;
+                            z-index: 1;
+                        }
+                        header .logo {
+                            position: fixed;
+                            top: 0vw;
+                            left: 0;
+                            text-align: center;
+                            width: 100vw;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: normal;
+                            text-transform: uppercase;
+                            font-size: 11vw;
+                            text-decoration: none;
+                            color: #4A4A4A;
+                        }
+                    }
+                    
+                    header a:visited {
+                        color: #4A4A4A;
+                    }
+                    
+                    nav {
+                        width: 100%;
+                        height: 100%;
+                        display: inline-block;
+                        text-align:center;
+                    }
+                    
+                    .name_home {
+                        display: inline-block;
+                        position: absolute;
+                        top: 45%;
+                        left: 40%;
+                        width: 6vw;
+                        height: 6vw;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        font-size: 0.8vw;
+                        letter-spacing: 0.2rem;
+                        text-decoration: none;
+                        color: #4A4A4A;
+                        text-align: center;
+                        vertical-align: middle;
+                        transform: rotate(-90deg);
+                        opacity: 0;
+                        transition: opacity 800ms ease-in-out 0s;
+                        
+                    }
+                    
+                    .viewing-page-1 .name_home {
+                        opacity: 1;
+                    }
+                    
+                    .name_about {
+                        display: inline-block;
+                        position: absolute;
+                        top: 45%;
+                        left: 40%;
+                        width: 6vw;
+                        height: 6vw;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        font-size: 0.8vw;
+                        letter-spacing: 0.2rem;
+                        text-decoration: none;
+                        color: #4A4A4A;
+                        text-align: center;
+                        transform: rotate(-90deg);
+                        opacity: 0;
+                        transition: opacity 800ms ease-in-out 0s;
+                    }
+                    
+                    .viewing-page-2 .name_about {
+                        opacity: 1;
+                    }
+                    
+                    .name_project {
+                        display: inline-block;
+                        position: absolute;
+                        top: 45%;
+                        left: 40%;
+                        width: 6vw;
+                        height: 6vw;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        font-size: 0.8vw;
+                        letter-spacing: 0.2rem;
+                        text-decoration: none;
+                        color: #4A4A4A;
+                        text-align: center;
+                        transform: rotate(-90deg);
+                        opacity: 0;
+                        transition: opacity 800ms ease-in-out 0s;
+                    }
+                    
+                    .viewing-page-3 .name_project {
+                        opacity: 1;
+                    }
+                    
+                    .viewing-page-4 .name_project {
+                        opacity: 1;
+                    }
+                    
+                    .viewing-page-5 .name_project {
+                        opacity: 1;
+                    }
+                    
+                    .viewing-page-6 .name_project {
+                        opacity: 1;
+                    }
+                    
+                    .name_contact {
+                        display: inline-block;
+                        position: absolute;
+                        top: 45%;
+                        left: 40%;
+                        width: 6vw;
+                        height: 6vw;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        font-size: 0.8vw;
+                        letter-spacing: 0.2rem;
+                        text-decoration: none;
+                        color: #4A4A4A;
+                        text-align: center;
+                        transform: rotate(-90deg);
+                        opacity: 0;
+                        transition: opacity 800ms ease-in-out 0s;
+                    }
+                    
+                    .viewing-page-7 .name_contact {
+                        opacity: 1;
+                    }
+                    
+                    section {
+                        width: 88vw;
+                        height: 100vh;
+                        margin-left: 6vw;
+                        margin-right: 0;
+                    }
+                    
+                    .section.page1 {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+                    
+                    .section.page1 h2 {
+                        text-align: left;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        font-size: 0.8vw;
+                        text-transform: uppercase;
+                        letter-spacing: 0.05rem;
+                        margin-bottom: 5rem;
+                        margin-top: -4rem;
+                        width: 100%;
+                        display: block;
+                        position: absolute;
+                        left: 25%;
+                        transform: translateX(-10%);
+                        opacity: 0;
+                        transition: opacity 1300ms ease-in-out 0.5s, transform 1300ms ease-in-out 0.5s;
+                    }
+                    
+                    .section.page1 h1 {
+                        text-align: center;
+                        font-family: 'Cormorant Garamond', serif;
+                        font-size: 2.5vw;
+                        font-weight: 400;
+                        line-height: 3.5vw;
+                        letter-spacing: 0.1rem;
+                        padding: 0 5rem;
+                        width: 100%;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: opacity 1300ms ease-in-out 0.7s, transform 1100ms ease-in-out 0.7s;
+                    }
+                    
+                    .section.page1 h1 .mobile {
+                        display: none;
+                    }
+                    
+                    .viewing-page-1 .page1 h2 {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                    
+                    .viewing-page-1 .page1 h1 {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .section.page1 h2 {
+                            text-align: left;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: normal;
+                            font-size: 2.5vw;
+                            text-transform: uppercase;
+                            letter-spacing: 0.05rem;
+                            margin-bottom: 5rem;
+                            margin-top: 3rem;
+                            width: 50%;
+                            display: block;
+                            position: absolute;
+                            left: 22%;
+                            transform: translateX(0%);
+                            opacity: 1;
+                        }
+                        .menunav {
+                            display: none;
+                        }
+                        .section.page1 h1 {
+                            text-align: center;
+                            font-family: 'Cormorant Garamond', serif;
+                            font-size: 5vw;
+                            font-weight: 400;
+                            line-height: 8vw;
+                            margin-top: 30vw;
+                            letter-spacing: 0.1rem;
+                            padding: 0 2rem;
+                            width: 100vw;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .section.page1 h1 .mobile {
+                            display: inline;
+                        }
+                        nav {
+                            display: none;
+                        }
+                    }
+                    
+                    .first h1,
+                    h2 {
+                        display: block
+                    }
+                    
+                    .section_project img {
+                        width: 75%;
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .scroll {
+                            position: absolute;
+                            bottom: 2%;
+                            left: 0;
+                            margin: 0 auto;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 0.8rem;
+                            width: 88vw;
+                            height: 14vh;
+                            visibility: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                        }
+                    }
+                    
+                    .scroll {
+                        position: absolute;
+                        bottom: 2%;
+                        left: 0;
+                        margin: 0 auto;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 0.8rem;
+                        width: 88vw;
+                        height: 14vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        opacity: 0;
+                        transition: opacity 1600ms ease-in-out 0.7s;
+                    }
+                    
+                    .viewing-page-1 .scroll {
+                        opacity: 1;
+                    }
+                    
+                    .scroll span {
+                        display: block;
+                        height: 8vh;
+                        border-right: 1px solid grey;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .section_project {
+                        width: 100%;
+                        height: 100vh;
+                        overflow: hidden;
+                    }
+                    
+                    .section_project p {
+                        font-family: 'Cormorant Garamond', serif;
+                        font-size: 1.1vw;
+                        color: #4A4A4A;
+                        line-height: 1.3vw;
+                        letter-spacing: 0.1rem;
+                    }
+                    
+                    .section_project h3 {
+                        display: inline-block;
+                        font-family: 'Cormorant Garamond', serif;
+                        font-size: 8vw;
+                        color: #4A4A4A;
+                        line-height: 3rem;
+                        letter-spacing: 0.1rem;
+                    }
+                    
+                    .section_project h2 {
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        font-size: 1.3vw;
+                    }
+                    
+                    .description_project1 {
+                        position: relative;
+                        left: 75%;
+                        top: -30%;
+                        transform: translateY(-30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-3 .description_project1 {
+                        transform: translateY(0%);
+                        opacity: 1;
+                    }
+                    
+                    .section_project.slider-1 p {
+                        width: 25%;
+                        height: auto;
+                        margin-top: 30px;
+                        padding: 0 1rem;
+                    }
+                    
+                    .section_project.slider-1 h3 {
+                        position: absolute;
+                        left: 6%;
+                        bottom: 10%;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-3 .section_project.slider-1 h3 {
+                        transform: translateY(0%);
+                        opacity: 1;
+                    }
+                    
+                    .section_project.slider-1 h2 {
+                        padding: 0 1rem;
+                    }
+                    
+                    .img_container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        width: 75%;
+                        overflow: hidden;
+                    }
+                    
+                    .img_container img {
+                        width: 100%;
+                        transform: translateX(-20%);
+                        opacity: 0;
+                        transition: transform 1300ms ease-out 0.8s, opacity 1500ms ease-in-out 0.7s;
+                    }
+                    
+                    .viewing-page-3 .img_container img {
+                        opacity: 1;
+                        transform: translateX(0%);
+                    }
+                    
+                    .view_more.p1 {
+                        position: relative;
+                        color: #737373;
+                        margin-right: 0.5rem;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: transform 1300ms ease-out 1s, opacity 1300ms ease-in-out 1.2s;
+                    }
+                    
+                    .viewing-page-3 .view_more.p1 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .view_more.p1::after {
+                        content: "View interactive prototype";
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .section_project.slider-1 {
+                            position: relative;
+                            top: 0px;
+                        }
+                        .section_project {
+                            overflow: auto;
+                        }
+                        .img_container {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            width: 100%;
+                        }
+                        .section_project.slider-1 img {
+                            width: 100%;
+                            transform: translateX(0%);
+                            opacity: 1;
+                            margin-top: 50px;
+                        }
+                        .description_project1 {
+                            position: relative;
+                            left: 0%;
+                            top: 0%;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .section_project.slider-1 p {
+                            width: 80%;
+                            height: auto;
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                            line-height: 6vw;
+                        }
+                        .section_project.slider-1 h3 {
+                            position: absolute;
+                            left: 0%;
+                            top: 0%;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .section_project.slider-1 h2 {
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                            text-align: left;
+                        }
+                        .view_more.p1 {
+                            position: relative;
+                            color: #737373;
+                            margin-right: 0rem;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .view_more.p1::after {
+                            content: "Prototype";
+                        }
+                        .view_more.p1 a {
+                            text-decoration: none;
+                        }
+                    }
+                    
+                    .description_project2 {
+                        position: relative;
+                        top: 40%;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-5 .description_project2 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .section_project.slider-2 p {
+                        margin-top: 40px;
+                        width: 25%;
+                        height: auto;
+                        padding: 0 1rem;
+                        text-align: right;
+                    }
+                    
+                    .section_project.slider-2 h3 {
+                        display: inline-block;
+                        position: absolute;
+                        top: 10%;
+                        left: 5%;
+                        transform: translateY(-30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-5 .section_project.slider-2 h3 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .section_project.slider-2 h2 {
+                        width: 25%;
+                        text-align: right;
+                        padding: 0 1rem;
+                    }
+                    
+                    .img_container1 {
+                        position: absolute;
+                        left: 25%;
+                        bottom: 0;
+                        overflow: hidden;
+                    }
+                    
+                    .img_container1 img {
+                        width: 100%;
+                        transform: translateX(20%);
+                        opacity: 0;
+                        transition: transform 1300ms ease-out 0.8s, opacity 1500ms ease-in-out 0.7s;
+                    }
+                    
+                    .viewing-page-5 .img_container1 img {
+                        opacity: 1;
+                        transform: translateX(0%);
+                    }
+                    
+                    .view_more.p2 {
+                        display: inline-block;
+                        position: relative;
+                        left: 67.5%;
+                        transform: translateY(-30%);
+                        opacity: 0;
+                        transition: transform 1300ms ease-out 1s, opacity 1300ms ease-in-out 1.2s;
+                    }
+                    
+                    .viewing-page-5 .view_more.p2 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .view_more.p2::after {
+                        content: "View prototype";
+                        color: #737373;
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .description_project2 {
+                            position: relative;
+                            left: 0%;
+                            top: 0%;
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                        .section_project.slider-2 {
+                            position: relative;
+                            top: -60px;
+                        }
+                        .img_container1 {
+                            position: relative;
+                            left: 0%;
+                            bottom: 0%;
+                            height: 190px;
+                        }
+                        .img_container1 img {
+                            width: 100%;
+                            transform: translateX(0%);
+                            opacity: 1;
+                            position: relative;
+                            top: -18px;
+                        }
+                        .section_project.slider-2 p {
+                            width: 80%;
+                            height: auto;
+                            padding: 0 1rem;
+                            text-align: left;
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                            line-height: 6vw;
+                        }
+                        .section_project.slider-2 h3 {
+                            position: relative;
+                            left: 0%;
+                            margin-bottom: 20px;
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                        .section_project.slider-2 h2 {
+                            width: 100%;
+                            text-align: left;
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                        }
+                        .view_more.p2 {
+                            display: inline-block;
+                            position: relative;
+                            left: 72.5%;
+                            top: 170px;
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                        .view_more.p2::after {
+                            content: "Prototype";
+                        }
+                    }
+                    
+                    .description_project3 {
+                        position: relative;
+                        left: 75%;
+                        top: -30%;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-4 .description_project3 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .section_project.slider-3 img {
+                        position: relative;
+                        left: 25%;
+                        bottom: 0;
+                    }
+                    
+                    .section_project.slider-3 .container {
+                        transform: translateX(-20%);
+                        opacity: 0;
+                        transition: transform 1300ms ease-out 0.8s, opacity 1500ms ease-in-out 0.7s;
+                    }
+                    
+                    .viewing-page-4 .section_project.slider-3 .container {
+                        opacity: 1;
+                        transform: translateX(0%);
+                    }
+                    
+                    .section_project.slider-3 h3 {
+                        position: absolute;
+                        left: 6%;
+                        bottom: 10%;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-4 .section_project.slider-3 h3 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .section_project.slider-3 h2 {
+                        padding: 0 1rem;
+                    }
+                    
+                    .section_project.slider-3 p {
+                        margin-top: 30px;
+                        width: 25%;
+                        height: auto;
+                        padding: 0 1rem;
+                    }
+                    
+                    .slide_mobile {
+                        display: none;
+                    }
+                    
+                    .description_project4 {
+                        position: relative;
+                        left: 75%;
+                        top: -30%;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-6 .description_project4 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    
+                    .section_project.slider-4 .container {
+                        transform: translateX(-20%);
+                        opacity: 0;
+                        transition: transform 1300ms ease-out 0.8s, opacity 1500ms ease-in-out 0.7s;
+                    }
+                    
+                    .viewing-page-6 .section_project.slider-4 .container {
+                        opacity: 1;
+                        transform: translateX(0%);
+                    }
+                    
+                    .section_project.slider-4 h3 {
+                        position: absolute;
+                        left: 6%;
+                        bottom: 10%;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-6 .section_project.slider-4 h3 {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .section_project.slider-4 h2 {
+                        padding: 0 1rem;
+                    }
+                    
+                    .section_project.slider-4 p {
+                        margin-top: 30px;
+                        width: 25%;
+                        height: auto;
+                        padding: 0 1rem;
+                    }
+                
+                    .about {
+                        width: 100%;
+                        height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    
+                    .about h1 {
+                        text-align: center;
+                        font-family: 'Cormorant Garamond', serif;
+                        font-size: 2.3vw;
+                        font-weight: 400;
+                        line-height: rem;
+                        letter-spacing: 0.1rem;
+                        padding: 2rem 5rem;
+                        width: 100%;
+                    }
+                    
+                    .about h1:first-child {
+                        transform: translateY(-20%);
+                        opacity: 0;
+                        transition: opacity 1150ms ease-in-out 0.9s, transform 1100ms ease-in-out 0.8s;
+                    }
+                    
+                    .about h1:last-child {
+                        transform: translateY(20%);
+                        opacity: 0;
+                        transition: opacity 1150ms ease-in-out 0.9s, transform 1100ms ease-in-out 0.8s;
+                    }
+                    
+                    .viewing-page-2 .about h1 {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    
+                    .about h1 a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .about {
+                            width: 100%;
+                            height: 100vh;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                        }
+                        .about h1 {
+                            text-align: left;
+                            font-family: 'Cormorant Garamond', serif;
+                            font-size: 5vw;
+                            font-weight: 400;
+                            line-height: 7vw;
+                            letter-spacing: 0.1rem;
+                            padding: 0.5rem 0rem;
+                            width: 100%;
+                            opacity: 1;
+                        }
+                        strong {
+                            font-weight: 600;
+                        }
+                        .about h1:first-child {
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .about h1:last-child {
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                    }
+                    
+                    .section-contact.page7 {
+                        padding-top: 15vh;
+                        border-right: 1px solid #DBDBDB;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        font-size: 1rem;
+                        text-decoration: none;
+                        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 32%);
+                        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 32%);
+                        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 32%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0);
+                    }
+                    
+                    form {
+                        width: 70vw;
+                        height: 100%;
+                        margin: 0 auto;
+                        margin-top: 8vh;
+                        display: block;
+                        transform: translateY(40%);
+                        opacity: 0;
+                        transition: transform 1000ms ease-out 1s, opacity 1300ms ease-in-out 0.9s;
+                    }
+                    
+                    .viewing-page-7 form {
+                        opacity: 1;
+                        transform: translateY(0%);
+                    }
+                    
+                    .form {
+                        width: 100%;
+                        height: auto;
+                        padding: 1.5rem 0;
+                        display: table;
+                    }
+                    
+                    .form label {
+                        display: inline-block;
+                        width: 40%;
+                        height: auto;
+                    }
+                    
+                    .form.email {
+                        border-bottom: 1px solid #DBDBDB;
+                        border-top: 1px solid #DBDBDB;
+                    }
+                    
+                    .form.message {
+                        border-bottom: 1px solid #DBDBDB;
+                        border-top: 1px solid #DBDBDB;
+                        padding-bottom: 1em;
+                    }
+                    
+                    .submit {
+                        text-transform: uppercase;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: bold;
+                        font-size: 1rem;
+                        border: 0;
+                        background-color: rgba(0, 0, 0, 0);
+                        float: right;
+                        margin-top: 1rem;
+                    }
+                    
+                    .input-style {
+                        border: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 0.8rem;
+                        background-color: rgba(0, 0, 0, 0);
+                        color: #a1a1a1;
+                    }
+                    
+                    textarea {
+                        outline: none;
+                        border: none;
+                        display: block;
+                        float: right;
+                        width: 60%;
+                        max-width: 60%;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: normal;
+                        font-size: 0.8rem;
+                        text-decoration: none;
+                        color: #a1a1a1;
+                        background-color: rgba(0, 0, 0, 0);
+                    }
+                    
+                    input:focus {
+                        background-color: none;
+                        border: 0;
+                        box-shadow: none;
+                        outline: none;
+                    }
+                    
+                    input[type=number]::-webkit-inner-spin-button,
+                    input[type=number]::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        margin: 0;
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .section-contact.page7 {
+                            border-right: 1px solid #DBDBDB;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: normal;
+                            font-size: 1rem;
+                            text-decoration: none;
+                            width: 100%;
+                            height: 130vh;
+                            margin-left: 0;
+                            margin-top: -300px;
+                        }
+                        form {
+                            width: 70vw;
+                            height: 100%;
+                            margin: 0 auto;
+                            margin-top: 8vh;
+                            display: block;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .input-style {
+                            border: none;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 0.8rem;
+                            background-color: rgba(0, 0, 0, 0);
+                            color: #a1a1a1;
+                            margin-top: 30px;
+                        }
+                        .form label {
+                            display: inline-block;
+                            width: 100%;
+                            height: auto;
+                        }
+                        textarea {
+                            outline: none;
+                            border: none;
+                            display: block;
+                            float: left;
+                            width: 100%;
+                            max-width: 100%;
+                            margin-top: 30px;
+                            height: 100px;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: normal;
+                            font-size: 0.8rem;
+                            text-decoration: none;
+                            color: #a1a1a1;
+                            background-color: rgba(0, 0, 0, 0);
+                        }
+                    }
+                    
+                    #slides {
+                        display: none
+                    }
+                    /* Show active item in the pagination */
+                    
+                    .slidesjs-pagination .active {
+                        color: red;
+                    }
+                    /* Media quires for a responsive layout */
+                    /* For tablets & smart phones */
+                    
+                    @media (max-width: 767px)and (orientation: landscape) {
+                        .container {
+                            width: 75%;
+                        }
+                    }
+                    /* For smartphones */
+                    
+                    @media (max-width: 480px) and (orientation: landscape) {
+                        .container {
+                            width: 75%;
+                        }
+                    }
+                    /* For smaller displays like laptops */
+                    
+                    @media (min-width: 768px) and (max-width: 1199px) {
+                        .container {
+                            width: 75%;
+                        }
+                    }
+                    /* For larger displays */
+                    
+                    @media (min-width: 1200px) {
+                        .container {
+                            width: 75%;
+                        }
+                    }
+                    
+                    #slides .slidesjs-navigation {
+                        position: absolute;
+                        left: 94%;
+                        margin-top: 0.5vw;
+                    }
+                    
+                    #slides .slidesjs-previous {
+                        width: 15px;
+                        height: 15px;
+                        text-decoration: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 400;
+                        font-size: 1.5rem;
+                        opacity: 50%;
+                        background-image: url("arrowleft.png");
+                        background-size: 15px;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    #slides .slidesjs-next {
+                        width: 15px;
+                        height: 15px;
+                        margin-left: 4.5%;
+                        text-decoration: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 400;
+                        font-size: 1.5rem;
+                        background-image: url("arrowright.png");
+                        background-size: 15px;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    #slides2 .slidesjs-navigation {
+                        position: absolute;
+                        left: 94%;
+                        margin-top: 0.5vw;
+                    }
+                    
+                    #slides2 .slidesjs-previous {
+                        width: 15px;
+                        height: 15px;
+                        text-decoration: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 400;
+                        font-size: 1.5rem;
+                        background-image: url("arrowleft.png");
+                        background-size: 15px;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    #slides2 .slidesjs-next {
+                        width: 15px;
+                        height: 15px;
+                        margin-left: 4.5%;
+                        text-decoration: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 400;
+                        font-size: 1.5rem;
+                        background-image: url("arrowright.png");
+                        background-size: 15px;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        .section_project.slider-3 {
+                            position: relative;
+                            top: -80px;
+                        }
+                        .description_project3 {
+                            position: relative;
+                            left: 0%;
+                            top: -8%;
+                            transform: translateX(0%);
+                            opacity: 1;
+                        }
+                        .section_project.slider-3 h3 {
+                            width: 100%;
+                            position: relative;
+                            left: 0%;
+                            top: -275px;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .section_project.slider-3 h2 {
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                        }
+                        .section_project.slider-3 p {
+                            width: 80%;
+                            height: auto;
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                            line-height: 6vw;
+                        }
+                        .slidesjs-navigation {
+                            position: absolute;
+                            left: 0%;
+                            bottom: 0%;
+                            display: none;
+                        }
+                        .slide_mobile {
+                            display: inline-block;
+                            width: 50%;
+                            position: relative;
+                            left: 50%;
+                            margin-top: 82px;
+                            text-align: right;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 0.8rem;
+                            color: #737373;
+                        }
+                        .section_project.slider-3 .container {
+                            position: relative;
+                            top: 60px;
+                            transform: translateX(0%);
+                            opacity: 1;
+                        }
+                    }
+                    
+                    @media (max-width: 600px) and (orientation: portrait) {
+                        
+                        .section_project.slider-4 {
+                            position: relative;
+                            top: -80px;
+                        }
+                        .section_project.slider-4 .container {
+                            transform: translateX(0%);
+                            opacity: 1;
+                            position: relative;
+                            top: 40px;
+                        }
+                        .section_project.slider-4 h3 {
+                            position: absolute;
+                            top: -10px;
+                            left: 0;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .description_project4 {
+                            position: relative;
+                            left: 0%;
+                            top: -3%;
+                            transform: translateY(0%);
+                            opacity: 1;
+                        }
+                        .section_project.slider-4 h2 {
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                        }
+                        .section_project.slider-4 p {
+                            width: 80%;
+                            height: auto;
+                            padding: 0 0rem;
+                            font-size: 4vw;
+                            line-height: 6vw;
+                        }
+                        .slidesjs-navigation {
+                            position: absolute;
+                            left: 0%;
+                            bottom: 0%;
+                            display: none;
+                        }
+                        .slide_mobile {
+                            display: inline-block;
+                            width: 50%;
+                            position: relative;
+                            left: 50%;
+                            top: -40px;
+                            text-align: right;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 0.8rem;
+                            color: #737373;
+                        }
+                    }
+
+@media (max-width: 768px) and (orientation: landscape) {
+    * {
+        display: none;
+    }
+}
+                    
+                    img {
+                        /* Responsive images (ensure images don't scale beyond their parents) */
+                        max-width: 100%;
+                        /* Part 1: Set a maxium relative to the parent */
+                        width: auto\9;
+                        /* IE7-8 need help adjusting responsive images */
+                        height: auto;
+                        /* Part 2: Scale the height according to the width, otherwise you get stretching */
+                        vertical-align: middle;
+                        border: 0;
+                        -ms-interpolation-mode: bicubic;
+                    }
