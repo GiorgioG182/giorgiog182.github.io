@@ -1211,7 +1211,7 @@
                         font-weight: 400;
                         font-size: 1.5rem;
                         opacity: 50%;
-                        background-image: url("arrowleft.png");
+                        background-image: url("../arrowleft.png");
                         background-size: 15px;
                         background-repeat: no-repeat;
                     }
@@ -1224,7 +1224,7 @@
                         font-family: 'Montserrat', sans-serif;
                         font-weight: 400;
                         font-size: 1.5rem;
-                        background-image: url("arrowright.png");
+                        background-image: url("../arrowright.png");
                         background-size: 15px;
                         background-repeat: no-repeat;
                     }
@@ -1242,7 +1242,7 @@
                         font-family: 'Montserrat', sans-serif;
                         font-weight: 400;
                         font-size: 1.5rem;
-                        background-image: url("arrowleft.png");
+                        background-image: url("../arrowleft.png");
                         background-size: 15px;
                         background-repeat: no-repeat;
                     }
@@ -1255,7 +1255,7 @@
                         font-family: 'Montserrat', sans-serif;
                         font-weight: 400;
                         font-size: 1.5rem;
-                        background-image: url("arrowright.png");
+                        background-image: url("../arrowright.png");
                         background-size: 15px;
                         background-repeat: no-repeat;
                     }
